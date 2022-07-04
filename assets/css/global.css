@@ -1,0 +1,369 @@
+/* 
+
+! Contient du code global à toutes les pages.
+
+! Noter que modifier un code ici impacterait d'autres pages
+
+! Utiliser les fichiers css liées aux pages individuelles pour les modification qui ne concernent que celles-ci
+
+*/
+
+@font-face {
+    font-family: 'Fira Sans Condensed';
+    src: url("fonts/Fira_Sans_Condensed/FiraSansCondensed-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url("fonts/Fira_Sans/FiraSans-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url("fonts/Poppins/Poppins-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Spline Sans Mono';
+    src: url("fonts/Spline_Sans_Mono/SplineSansMono-Regular.ttf") format('truetype');
+}
+
+.reset-bootstrap-modif ol,
+.reset-bootstrap-modif ul,
+.reset-bootstrap-modif li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+html {
+    font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "sans-serif", "FiraSans-Regular", "Fira Sans", "Poppins";
+    color: #236800;
+}
+
+a {
+    text-decoration: none;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.width-limit-wrapper {
+    position : relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+}
+
+.bloc {display: block;}
+
+.flex-row {display: flex;flex-direction: row;}
+.flex-column {display: flex;flex-direction: column;}
+.flex-wrap {flex-wrap: wrap;} .flex-wrap-reverse {flex-wrap: wrap-reverse;}
+.flex-jc-space-between {justify-content: space-between;}
+.flex-jc-space-evenly {justify-content: space-evenly;}
+.flex-jc-start {justify-content: flex-start;}
+.flex-jc-center {justify-content: center;}
+.flex-ai-center {align-items: center;}
+.flex-ai-start {align-items: flex-start;}
+.flex-ai-end {align-items: flex-end;}
+.flex-grow {flex-grow: 1;}
+
+.h-100 {height : 100%;}
+
+.right-0 {right: 0;} .right-100 {right: 100%;} 
+.top-0 {top: 0;} .top-100 {top: 100%;}
+.left-0 {left: 0;} .left-100 {left: 100%;}
+.bottom-0 {bottom: 0;} .bottom-100 {bottom: 100%;}
+
+.pad-h-1rem {padding-left: 1rem; padding-right: 1rem;}
+.marg-v-1rem {margin-top: 1rem; margin-bottom: 1rem;} .marg-h-auto {margin-left: auto; margin-right: auto;}
+.marg-0 {margin:0;}
+
+.objfit-contain {object-fit: contain;} .objfit-cover {object-fit: cover;}
+
+.flip-h {transform: scaleX(-1);}
+
+.bloc-sm-display, .flex-sm-display {display: none;}
+.bloc-sm-hidden {display: block;} .flex-sm-hidden {display: flex;}
+
+.list-style-none {list-style: none;}
+
+/* Media query */
+
+@media screen and (max-width : 600px) {
+    .bloc-sm-display {display: block;} .flex-sm-display {display: flex;}
+    .bloc-sm-hidden, .flex-sm-hidden {display: none;} 
+}
+
+/* ------ Project css globals ------ */
+
+.anime-on-apparition { 
+    /* lié à un global.js */
+    opacity: 0.1;
+}
+.anime-on-apparition.isVisibleOnScreen {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.color-white {color: white;}
+.color-main-green {color: #236800;}
+
+.hight-visibility-button {
+    display: block;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.7rem 1.4rem;
+    background-color: #ffcf11;
+    color: #236800;
+    font-weight: bold;
+    cursor: pointer;
+    transition: box-shadow 0.1s;
+}
+.hight-visibility-button:hover{
+    color: #236800;
+    transition: box-shadow 0.5s;
+    box-shadow: 0 0 16px 2px #236800;
+}
+
+.action-button-link {
+    display: block;
+    width: fit-content;
+    text-align: center;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0;
+    background-color: #236800;
+    color: white;
+}
+.action-button-link:hover {
+    color: #ffcf11;
+}
+
+.main-section {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+
+.main-section h2 {
+    color: #236800;
+}
+
+
+.min-pres-chiffre-clef {
+    font-family: "Poppins";
+    display: flex;
+    height: 150px;
+    width: 100%;
+    max-width: 300px;
+    margin: 2px;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #236800;
+    border-radius: 0.5rem;
+    color: #ffcf11;
+    text-align: center;
+}
+.min-pres-chiffre-clef .val {
+    margin: 0;
+    justify-self: flex-start;
+    font-size: 2rem;
+}
+.min-pres-chiffre-clef .label {
+    margin: 0;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.simple-page-header {
+    width: 100%;
+    margin: 10rem 0;
+    background-color: #23680011;
+}
+.simple-page-header h1 {
+    width: 100%;
+    text-align: center;
+    padding: 3rem 0;
+    margin: 0;
+}
+
+.pad-align-with-h2 { /* To make elements padding left align with .simple-page-section h2 */
+    padding-left: 5rem;
+}
+
+.simple-page-section {
+    width: 100%;
+}
+
+.simple-page-section h2 {
+    position: relative;
+    padding: 3rem 0;
+    padding-left: 5rem;
+}
+
+.simple-page-section h2::after {
+    position: absolute;
+    content: " ";
+    width: 5rem;
+    height: 0.8rem;
+    background-color: #236800;
+    top: 60%;
+    transform: translateY(100%);
+    left: 5rem;
+    
+}
+
+section.section-voir-aussi h2{
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 6rem 1rem 2rem 1rem;
+    margin-bottom: 2rem;
+}
+section.section-voir-aussi h2::after{
+    content: "";
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    top: unset;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+section.section-voir-aussi .list-links {
+    list-style: none;
+}
+section.section-voir-aussi .list-links li{
+    width: 100%;
+    max-width: 300px;
+    display: block;
+}
+section.section-voir-aussi .list-links a{
+    position: relative;
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    color: #236800;
+}
+section.section-voir-aussi .list-links a::after{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #236800;
+}
+section.section-voir-aussi .list-links a:hover::after{
+    width: 100%;
+    transition: all 0.25s;
+}
+
+.only-text-container {
+    width: 100%;
+    padding: 0 1rem 2rem 5rem;
+}
+.only-text-container p {
+    width: 100%;
+    max-width: 900px;
+}
+
+.table-container {
+    /* Assosié à une Media query */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+@media screen and (max-width : 650px) {
+    .table-container {
+        overflow-x: scroll;
+    }
+}
+.table-style1 {
+    width: 100%;
+    min-width: 600px;
+}
+.table-style1 th,
+.table-style1 td {
+    border: 2px solid #236800;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 0.6rem 0.5rem;
+}
+.table-style1 thead tr {
+    background-color: #236800;
+    color: white;
+}
+.table-style1 thead th {
+    border-left-color: white;
+    border-right-color: white;
+}
+.table-style1 thead th:last-child {
+    border-right-color: #236800;
+}
+.table-style1 thead th:first-child {
+    border-left-color: #236800;
+}
+.table-style1 tbody tr {
+    color: #236800;
+}
+.table-style1 tbody tr:nth-child(even) {
+    background-color: #23680011;
+}
+.table-style1 tbody tr:hover {
+    background-color: #ffcf11aa;
+}
+.table-style1 .force-hover {
+    background-color: #ffcf11aa !important ;
+}
+
+@media screen and (max-width : 800px) {
+    .pad-align-with-h2 {
+        padding-left: 5%;
+    }
+
+    .simple-page-section h2 {
+        position: relative;
+        padding: 3rem 0;
+        padding-left: 5%;
+    }
+    
+    .simple-page-section h2::after {
+        position: absolute;
+        content: " ";
+        width: 5rem;
+        height: 0.8rem;
+        background-color: #236800;
+        top: 60%;
+        transform: translateY(100%);
+        left: 5%;
+        
+    }
+
+    .only-text-container {
+        padding: 0 1rem 2rem 5%;
+    }
+}
